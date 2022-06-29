@@ -10,6 +10,7 @@ resource "azurerm_public_ip" "management" {
   allocation_method   = "Static"
   depends_on          = [azurerm_resource_group.this]
   sku                 = "Standard"
+  availability_zone   = "No-Zone"
 }
 
 # Network Interface:
@@ -71,6 +72,7 @@ resource "azurerm_public_ip" "ethernet_0_1" {
   allocation_method   = "Static"
   depends_on          = [azurerm_resource_group.this]
   sku                 = "Standard"
+  availability_zone   = "No-Zone"
 }
 
 # Network Interface
