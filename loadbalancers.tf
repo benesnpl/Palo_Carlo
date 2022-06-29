@@ -16,6 +16,7 @@ resource "azurerm_lb" "ingress" {
     name                 = "PublicIPAddress"
     public_ip_address_id = azurerm_public_ip.ingress.id
   }
+  availability_zone   = "No-Zone"
   depends_on = [azurerm_virtual_network.this]
 }
 
@@ -90,6 +91,8 @@ resource "azurerm_lb" "egress" {
     name      = "LoadBalancerIP"
     subnet_id = azurerm_subnet.this["loadbalancer"].id
   }
+ 
+  availability_zone   = "No-Zone"
 }
 
 resource "azurerm_lb_probe" "egress_https" {
