@@ -243,7 +243,7 @@ resource "azurerm_linux_virtual_machine" "vmseries" {
     storage_account_type = "Premium_LRS"
   }
 
- 
+}
 
 output "vmseries0_management_ip" {
   value = azurerm_public_ip.management["vmseries0"].ip_address
