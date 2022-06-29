@@ -266,6 +266,4 @@ output "vmseries0_management_ip" {
   value = azurerm_public_ip.management["vmseries0"].ip_address
 }
 
-output "vmseries1_management_ip" {
-  value = azurerm_public_ip.management["vmseries1"].ip_address
-}
+
