@@ -91,7 +91,9 @@ resource "azurerm_lb" "egress" {
   frontend_ip_configuration {
     name      = "LoadBalancerIP"
     subnet_id = azurerm_subnet.this["loadbalancer"].id
+    availability_zone   = "No-Zone"
   }
+  
  
 }
 
