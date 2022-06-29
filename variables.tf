@@ -85,7 +85,6 @@ variable "vmseries" {
       ha2_ip            = "100.71.64.20"
       private_ip        = "100.71.64.36"
       public_ip         = "100.71.64.52"
-      availability_zone = 1
       # If not licensing authcode is needed leave this set to a value of a space (ie " ")
       authcodes = " "
     }
