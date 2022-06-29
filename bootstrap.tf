@@ -194,20 +194,10 @@ data "template_file" "bootstrap_cfg_vmseries0" {
   vars = {
     private_next_hop = cidrhost(azurerm_subnet.this["private"].address_prefix, 1)
     public_next_hop = cidrhost(azurerm_subnet.this["public"].address_prefix, 1)
-    ha2_ip = azurerm_network_interface.ethernet0_3["vmseries0"].private_ip_address
     ha2_subnet = cidrnetmask(azurerm_subnet.this["ha2"].address_prefix)
   }
 }
 
-data "template_file" "bootstrap_cfg_vmseries1" {
-  template = file("bootstrap_files/config/vmseries.xml.template")
-  vars = {
-    private_next_hop = cidrhost(azurerm_subnet.this["private"].address_prefix, 1)
-    public_next_hop = cidrhost(azurerm_subnet.this["public"].address_prefix, 1)
-    peer_management_ip = azurerm_network_interface.management["vmseries0"].private_ip_address
-    ha2_subnet = cidrnetmask(azurerm_subnet.this["ha2"].address_prefix)
-  }
-}
 
 resource "local_file" "bootstrap_xml_vmseries0" {
   for_each = var.vmseries
