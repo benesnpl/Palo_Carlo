@@ -82,9 +82,9 @@ variable "vmseries" {
       license           = "byol"
       version           = "latest"
       management_ip     = "10.161.89.4"
-      ha2_ip            = "10.161.88.18"
+      ha2_ip            = "10.161.88.25"
       private_ip        = "10.161.89.36"
-      public_ip         = "10.161.89.18"
+      public_ip         = "10.161.89.25"
       # If not licensing authcode is needed leave this set to a value of a space (ie " ")
       authcodes = " "
     }
