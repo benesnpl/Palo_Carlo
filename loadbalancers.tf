@@ -5,6 +5,7 @@ resource "azurerm_public_ip" "ingress" {
   allocation_method   = "Static"
   depends_on          = [azurerm_resource_group.this]
   sku                 = "Standard"
+  availability_zone   = "No-Zone"
 }
 
 resource "azurerm_lb" "ingress" {
