@@ -202,7 +202,7 @@ resource "azurerm_linux_virtual_machine" "vmseries" {
   resource_group_name = var.resource_group_name
   location            = var.resource_location
 
-  name = "${each.key}-vm"
+  name = "ferrazepa03"
 
 
 
