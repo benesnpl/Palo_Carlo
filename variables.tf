@@ -9,7 +9,7 @@ variable "create_resource_group" {
 
 variable "resource_group_name" {
   description = "Name of the Azure Resource Group"
-  default     = "prot-eastus-rg-networking00"
+  default     = "ferr-westus-networkinghub00-rg"
 }
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -32,12 +32,12 @@ variable "create_virtual_network" {
 
 variable "virtual_network_name" {
   description = "Name of the Azure Virtual Network"
-  default     = "prot-eastus-vnet-networking00"
+  default     = "ferr-westus-vnethub00"
 }
 
 variable "virtual_network_cidr" {
   description = "Virtual Networks CIDR Block"
-  default     = "100.71.64.0/23"
+  default     = "10.161.88.0/22"
 }
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -53,19 +53,19 @@ variable "virtual_network_subnets" {
   description = "Subnet Map for Creation"
   default = {
     management = {
-      address_prefixes = ["100.71.64.0/28"]
+      address_prefixes = ["10.161.89.0/28"]
     },
     ha2 = {
-      address_prefixes = ["100.71.64.16/28"]
+      address_prefixes = ["10.161.88.16/28"]
     },
     private = {
-      address_prefixes = ["100.71.64.32/28"]
+      address_prefixes = ["10.161.89.32/28"]
     },
     public = {
-      address_prefixes = ["100.71.64.48/28"]
+      address_prefixes = ["10.161.89.16/28"]
     },
     loadbalancer = {
-      address_prefixes = ["100.71.64.64/28"]
+      address_prefixes = ["10.161.88.64/28"]
     }
   }
 }
@@ -81,10 +81,10 @@ variable "vmseries" {
       # License options "byol", "bundle1", "bundle2"
       license           = "byol"
       version           = "latest"
-      management_ip     = "100.71.64.4"
-      ha2_ip            = "100.71.64.20"
-      private_ip        = "100.71.64.36"
-      public_ip         = "100.71.64.52"
+      management_ip     = "10.161.89.4"
+      ha2_ip            = "10.161.88.18"
+      private_ip        = "10.161.89.36"
+      public_ip         = "10.161.89.18"
       # If not licensing authcode is needed leave this set to a value of a space (ie " ")
       authcodes = " "
     }
