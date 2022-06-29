@@ -194,7 +194,6 @@ data "template_file" "bootstrap_cfg_vmseries0" {
   vars = {
     private_next_hop = cidrhost(azurerm_subnet.this["private"].address_prefix, 1)
     public_next_hop = cidrhost(azurerm_subnet.this["public"].address_prefix, 1)
-    peer_management_ip = azurerm_network_interface.management["vmseries1"].private_ip_address
     ha2_ip = azurerm_network_interface.ethernet0_3["vmseries0"].private_ip_address
     ha2_subnet = cidrnetmask(azurerm_subnet.this["ha2"].address_prefix)
   }
@@ -206,7 +205,6 @@ data "template_file" "bootstrap_cfg_vmseries1" {
     private_next_hop = cidrhost(azurerm_subnet.this["private"].address_prefix, 1)
     public_next_hop = cidrhost(azurerm_subnet.this["public"].address_prefix, 1)
     peer_management_ip = azurerm_network_interface.management["vmseries0"].private_ip_address
-    ha2_ip = azurerm_network_interface.ethernet0_3["vmseries1"].private_ip_address
     ha2_subnet = cidrnetmask(azurerm_subnet.this["ha2"].address_prefix)
   }
 }
